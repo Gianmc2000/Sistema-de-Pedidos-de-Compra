@@ -88,11 +88,32 @@ public class BaseResponse<T> {
 1. Clonar el repositorio
    git clone https://github.com/Gianmc2000/Sistema-Gestion-Reserva-Salas.git
 2. Configurar la base de datos en `application.properties`
-3. Ejecutar la aplicación con Maven
+3. 🐳 Ejecución con Docker Compose
+
+- Requisitos previos 
+- Tener instalado Docker
+- Tener instalado Docker Compose
+- 
+## ▶️ Pasos para ejecutar el proyecto con Docker
+Ubicarse en la raíz del proyecto (donde está el archivo docker-compose.yml)
+Construir y levantar los contenedores:
+
+```json
+docker-compose up -d
+
+```
+Esto hará lo siguiente:
+- Construirá la imagen de la aplicación Spring Boot
+- Levantará un contenedor para la aplicación
+- Levantará un contenedor para la base de datos (Oracle o PostgreSQL según tu configuración)
+- Levantará un contenedor para Swagger UI
+- Esperar a que los contenedores estén en funcionamiento (puedes verificar con `docker ps`)
+
+4. Ejecutar la aplicación con Maven
    mvn spring-boot:run
-4. Acceder a la API en `http://localhost:8080/api/pedidos`
-5. Probar los endpoints usando Postman o Swagger UI
-6. Ejecutar pruebas unitarias con
+5. Acceder a la API en `http://localhost:8080/api/pedidos`
+6. Probar los endpoints usando Postman o Swagger UI
+7. Ejecutar pruebas unitarias con
    mvn test
-7. Revisar la documentación de la API en `http://localhost:8080/swagger-ui.html`
-8. ¡Listo para gestionar tus pedidos!
+8. Revisar la documentación de la API en `http://localhost:8080/swagger-ui.html`
+9. ¡Listo para gestionar tus pedidos!
