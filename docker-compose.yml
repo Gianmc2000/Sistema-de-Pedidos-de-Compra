@@ -1,0 +1,16 @@
+services:
+  postgres-test:
+    image: postgres:16
+    container_name: postgres_pedidos_test
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: db_pedidos
+      POSTGRES_USER: pedidos_user
+      POSTGRES_PASSWORD: pedidos_pass
+    volumes:
+      - postgres_test_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_test_data:
