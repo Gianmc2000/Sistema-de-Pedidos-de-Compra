@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-@ExtendWith(MockitoExtension.class)
+
 class PedidoServiceImplTest {
 
     @InjectMocks
@@ -45,6 +45,8 @@ class PedidoServiceImplTest {
 
     @BeforeEach
     void setUp() {
+
+        MockitoAnnotations.openMocks(this);
         cliente = Cliente.builder()
                 .id(1L)
                 .nombre("Juan")
